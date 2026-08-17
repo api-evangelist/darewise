@@ -1,0 +1,98 @@
+generated: '2026-08-17'
+method: probed
+source: live HTTPS probes of every Darewise / Life Beyond Studios host on 2026-08-17
+note: >-
+  Recorded ABSENCE. Every /.well-known/ path probed on the studio's live host returns a real origin
+  404 ("File not found."), and the legacy brand host is unreachable at the TCP layer. No WellKnown,
+  SecurityTxt, APICatalog or AgentCard pointer is emitted for this provider because no path returned
+  a document. Note the split behaviour on www.lifebeyondstudios.com: /robots.txt and every
+  /.well-known/* path bypass the edge and hit the origin (200 / 404), while all HTML and API-shaped
+  paths are answered by a Cloudflare interstitial ("Just a moment...", HTTP 403) — so a 403 on this
+  host is a bot challenge, not evidence that the path exists.
+hosts:
+- host: www.lifebeyondstudios.com
+  reachable: true
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /robots.txt
+    status: 200
+    file: null
+    note: >-
+      Served, but carries no discovery information — the entire file is the Cloudflare
+      content-signals preamble (search / ai-input / ai-train definitions plus an EU DSM Article 4
+      rights reservation) with no Sitemap: line and no per-agent rules captured at probe time.
+- host: www.darewise.com
+  reachable: false
+  note: >-
+    DNS resolves to 139.177.176.71 but TCP 443 and 80 both refuse / time out, so no HTTP status can
+    be recorded for any path. curl reports "Connection timed out" and ECONNREFUSED on 443.
+  documents:
+  - path: /
+    status: 0
+  - path: /.well-known/security.txt
+    status: 0
+  - path: /robots.txt
+    status: 0
+  - path: /llms.txt
+    status: 0
+contract_discovery:
+  note: >-
+    STEP 0b hunt, run against every host the studio is known to operate. No OpenAPI, Swagger,
+    GraphQL, MCP or A2A surface exists.
+  probes:
+  - url: https://www.lifebeyondstudios.com/openapi.json
+    status: 403
+    result: cloudflare-challenge
+  - url: https://www.lifebeyondstudios.com/openapi.yaml
+    status: 403
+    result: cloudflare-challenge
+  - url: https://www.lifebeyondstudios.com/swagger.json
+    status: 403
+    result: cloudflare-challenge
+  - url: https://www.lifebeyondstudios.com/v1/openapi.json
+    status: 403
+    result: cloudflare-challenge
+  - url: https://www.lifebeyondstudios.com/api-docs
+    status: 403
+    result: cloudflare-challenge
+  - url: https://www.lifebeyondstudios.com/graphql
+    status: 403
+    result: cloudflare-challenge
+  - url: https://www.lifebeyondstudios.com/wp-json/
+    status: 403
+    result: cloudflare-challenge
+  - url: https://www.darewise.com/
+    status: 0
+    result: host-unreachable
+  dns:
+  - host: api.darewise.com
+    result: NXDOMAIN
+  - host: docs.darewise.com
+    result: NXDOMAIN
+  - host: developer.darewise.com
+    result: NXDOMAIN
+  - host: api.lifebeyondstudios.com
+    result: NXDOMAIN
+  - host: docs.lifebeyondstudios.com
+    result: NXDOMAIN
+  - host: developers.lifebeyondstudios.com
+    result: NXDOMAIN
+  - host: play.lifebeyondstudios.com
+    result: NXDOMAIN

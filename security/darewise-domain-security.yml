@@ -1,0 +1,30 @@
+generated: '2026-08-17'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.lifebeyondstudios.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 18 16:38:30 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: www.darewise.com
+  https: false
+  note: legacy brand domain; DNS resolves to 139.177.176.71 but TCP 443 and 80 both refuse/time out,
+    so no TLS or HSTS posture can be measured. Last Internet Archive capture serving HTTP 200 was
+    2025-04-21; captures from 2025-05-04 onward are 301s.
+domains:
+- domain: lifebeyondstudios.com
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: false
+- domain: darewise.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+  note: web is offline but mail is still actively managed — Google Workspace MX, "v=spf1
+    include:_spf.google.com ~all", and DMARC p=quarantine pct=100 adkim=s aspf=s reporting to
+    it-security@darewise.com.

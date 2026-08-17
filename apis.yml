@@ -1,19 +1,38 @@
 aid: darewise
 name: Darewise
-description: 'Darewise is a company surfaced as a portfolio company of serena and added to the API Evangelist
-  network as a stub for enrichment. Sector: blockchain. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: 'Darewise Entertainment is a European game studio founded by AAA industry veterans — game
+  director Benjamin Charbit (Assassin''s Creed IV: Black Flag) and engine tech lead Samuel Kahn (Ubisoft
+  Snowdrop, Crytek CryEngine) — with offices in Paris, London and Barcelona. It builds Life Beyond, a
+  free-to-play sci-fi MMO on Unreal Engine 5 set on the alien world Dolos, combining Web3 asset ownership
+  (NFTs and ERC-20 tokens) with player-driven settlement and governance. Animoca Brands announced the
+  acquisition of a majority stake in April 2022, and the studio now trades as Life Beyond Studios. The
+  original darewise.com website last served content in April 2025 and the host now refuses TCP
+  connections on 80 and 443. Darewise publishes no API, developer portal, or API documentation of any
+  kind; the only machine-readable developer artifact it has ever released publicly is an open-source
+  AsyncAPI generator template that emits Unreal Engine C++ from an AsyncAPI 3.x document, published to
+  npm under its own scope.'
 url: https://raw.githubusercontent.com/api-evangelist/darewise/refs/heads/main/apis.yml
+image: https://avatars.githubusercontent.com/u/35532823?v=4
 x-type: company
 x-source: serena-portfolio
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-legacy-website: https://www.darewise.com/
+x-current-brand: Life Beyond Studios
 specificationVersion: '0.20'
 created: '2026-08-17'
 modified: '2026-08-17'
 tags:
 - Company
 - Blockchain
+- Games
+- Game Development
+- Web3
+- NFT
+- Metaverse
+- Unreal Engine
+- Entertainment
+- Open Source
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -21,5 +40,64 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/darewise-domain-security.yml
+- type: WellKnownProbe
+  url: well-known/darewise-well-known.yml
+- type: Packages
+  url: packages/darewise-packages.yml
+- type: LLMsTxt
+  url: llms/darewise-llms.txt
 - type: Website
-  url: https://www.darewise.com/
+  url: https://www.lifebeyondstudios.com/
+- type: About
+  url: https://www.lifebeyondstudios.com/about
+- type: Careers
+  url: https://www.lifebeyondstudios.com/careers
+- type: Contact
+  url: https://www.lifebeyondstudios.com/contact
+- type: GitHubOrganization
+  url: https://github.com/Darewise
+- type: OpenSource
+  url: https://github.com/Darewise/asyncapi-template-cpp-ue
+- type: LinkedIn
+  url: https://www.linkedin.com/company/lifebeyondstudios
+- type: ParentCompany
+  url: https://www.animocabrands.com/
+x-enrichment:
+  date: '2026-08-17'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Darewise ships a consumer game and nothing else — the legacy brand host www.darewise.com now
+    refuses TCP on both 443 and 80 (its last Internet Archive capture serving HTTP 200 is
+    2025-04-21), the live successor host www.lifebeyondstudios.com returns a real origin 404 for
+    /llms.txt and for every /.well-known/* path while answering all HTML and API-shaped paths with a
+    Cloudflare "Just a moment..." 403 interstitial, no api./docs./developer. subdomain resolves in
+    DNS on either domain, and the studio's only first-party developer artifact anywhere is an
+    unmaintained Apache-2.0 AsyncAPI generator template for Unreal Engine on npm (v0.1.3,
+    2023-12-11) — a code generator, not an API.
+  evidence:
+  - url: https://www.darewise.com/
+    status: 0
+  - url: https://www.lifebeyondstudios.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.lifebeyondstudios.com/.well-known/security.txt
+    status: 404
+  - url: https://www.lifebeyondstudios.com/.well-known/api-catalog
+    status: 404
+  - url: https://www.lifebeyondstudios.com/llms.txt
+    status: 404
+  - url: https://www.lifebeyondstudios.com/openapi.json
+    status: 403
+  - url: https://www.lifebeyondstudios.com/graphql
+    status: 403
+  - url: https://www.lifebeyondstudios.com/robots.txt
+    status: 200
+  - url: https://registry.npmjs.org/@darewise%2Fasyncapi-template-cpp-ue
+    status: 200
+  checked: '2026-08-17'

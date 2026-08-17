@@ -1,0 +1,72 @@
+generated: '2026-08-17'
+method: searched
+source: https://registry.npmjs.org/@darewise%2Fasyncapi-template-cpp-ue
+note: >-
+  Darewise ships NO client SDK, because it ships no API. The single first-party package it has
+  published to any public registry is developer TOOLING — an AsyncAPI generator template that emits
+  Unreal Engine C++ from an AsyncAPI 3.x document. It is catalogued here because it is real,
+  first-party and dated, but it is deliberately NOT wired as an `SDKs` pointer: it is not a client
+  library for a Darewise API, and counting it as one would credit the studio with an SDK surface it
+  does not have. Registries searched with no first-party result: PyPI, RubyGems, crates.io, NuGet,
+  Maven Central, pkg.go.dev, Packagist.
+package_count: 1
+official_count: 1
+sdk_count: 0
+packages:
+- language: javascript
+  registry: npm
+  name: '@darewise/asyncapi-template-cpp-ue'
+  url: https://www.npmjs.com/package/@darewise/asyncapi-template-cpp-ue
+  install: npm install @darewise/asyncapi-template-cpp-ue
+  official: true
+  kind: tooling
+  role: asyncapi-generator-template
+  version: 0.1.3
+  published: '2023-12-11'
+  first_published: '2023-12-05'
+  versions_published: 4
+  license: Apache-2.0
+  repository: https://github.com/Darewise/asyncapi-template-cpp-ue
+  maintainers:
+  - samuel_darewise
+  description: >-
+    AsyncAPI generator template for Unreal Engine. Registered with the AsyncAPI Generator as template
+    `cpp-ue` (React renderer, generator >=1.3.0 <2.0.0, apiVersion v3) and parameterised by
+    cppNamespace, modelNamePrefix, unrealModuleName and buildProjectFiles — it renders a compilable
+    UE module (Build.cs, module header/source, per-model headers/sources, per-topic headers/sources)
+    from an AsyncAPI document.
+  currency_note: >-
+    Latest release 0.1.3 on 2023-12-11; the GitHub repository's last push is the same day
+    (2023-12-11T18:24:54Z). Unmaintained for roughly two and a half years as of this probe, and
+    pinned to the AsyncAPI Generator 1.x line which has since been superseded.
+registries_searched:
+- registry: npm
+  endpoint: https://registry.npmjs.org/-/v1/search?text=darewise
+  results: 1
+- registry: npm
+  endpoint: https://registry.npmjs.org/-/v1/search?text=lifebeyond
+  results: 0
+- registry: pypi
+  endpoint: https://pypi.org/pypi/darewise/json
+  status: 404
+  results: 0
+- registry: rubygems
+  endpoint: https://rubygems.org/api/v1/search.json?query=darewise
+  results: 0
+- registry: crates.io
+  endpoint: https://crates.io/api/v1/crates?q=darewise
+  results: 0
+- registry: nuget
+  endpoint: https://azuresearch-usnc.nuget.org/query?q=darewise
+  results: 0
+- registry: maven-central
+  endpoint: https://search.maven.org/solrsearch/select?q=darewise
+  results: 0
+- registry: go-modules
+  endpoint: https://proxy.golang.org/github.com/darewise/@v/list
+  status: 404
+  results: 0
+- registry: packagist
+  endpoint: https://packagist.org/search.json?q=darewise
+  results: 0
+  note: returns only fuzzy non-matches (foris/darwined-core-php-clients); no Darewise-owned package.

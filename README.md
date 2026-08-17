@@ -42,6 +42,10 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Darewise is a company surfaced as a portfolio company of serena and added to the API Evangelist network as a stub for enrichment. Sector: blockchain. This profile is a lead awaiting the enrichment pipeline.
+Darewise Entertainment is a European game studio — Paris, London and Barcelona — founded by AAA industry veterans and building **Life Beyond**, a free-to-play sci-fi MMO on Unreal Engine 5 set on the alien world Dolos, with Web3 asset ownership (NFTs and ERC-20 tokens) and player-driven settlement and governance. Animoca Brands announced the acquisition of a majority stake in April 2022 and the studio now operates as **Life Beyond Studios** at [lifebeyondstudios.com](https://www.lifebeyondstudios.com/).
 
-Source: portfolio company of [serena](https://github.com/api-evangelist/serena) — https://www.darewise.com/
+**No API surface.** Darewise publishes no API, developer portal or API documentation. Probed 2026-08-17: no OpenAPI, Swagger, GraphQL, MCP or A2A document on any host it operates; every `/.well-known/*` path and `/llms.txt` on the live host return a real origin 404; no `api.`, `docs.` or `developer.` subdomain resolves in DNS on either domain; and the legacy brand host `www.darewise.com` refuses TCP on 443 and 80 (last archived HTTP 200: 2025-04-21) while its DNS still carries live Google Workspace mail with SPF and DMARC `p=quarantine`.
+
+The one first-party developer artifact the studio ships is [`@darewise/asyncapi-template-cpp-ue`](https://github.com/Darewise/asyncapi-template-cpp-ue) — an Apache-2.0 AsyncAPI Generator template (`cpp-ue`) that renders a compilable Unreal Engine C++ module from an AsyncAPI 3.x document, last released v0.1.3 on 2023-12-11. It is tooling, not a client SDK, and the studio publishes no AsyncAPI document of its own.
+
+Source: portfolio company of [serena](https://github.com/api-evangelist/serena) — legacy site https://www.darewise.com/ (offline)
