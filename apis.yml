@@ -12,6 +12,17 @@ description: 'Darewise Entertainment is a European game studio founded by AAA in
   AsyncAPI generator template that emits Unreal Engine C++ from an AsyncAPI 3.x document, published to
   npm under its own scope.'
 url: https://raw.githubusercontent.com/api-evangelist/darewise/refs/heads/main/apis.yml
+deliveryModel:
+  model: library
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Library · distributed through package registries, no callable service
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 image: https://avatars.githubusercontent.com/u/35532823?v=4
 x-type: company
 x-source: serena-portfolio
